@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="project.css">  
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <title>My project for my love</title>
+    </head>
+    <body>
+        <audio id="piano" loop>
+            <source src="Sound/piano.mp3" type="audio/mp3">
+        </audio>
+        <div id="page1" class="page">
+        <p id="instruction">Click the heart</p>
+        <div class="container">
+            <label>
+                <div class="heart">
+                    <img src="Images/heart.png">
+                </div>
+                <input id="messageState" type="checkbox" style="display: none;">
+                </label>
+            <div class="message">
+                <h1 style="font-family: Dancing Script, cursive; font-size: 60px; letter-spacing: 1px;"> Xin chào Trần Nữ Thảo Hiền</h1>
+                <p>
+                    <span>
+                        Chúc Hiền một ngày lễ thật vui vẻ hạnh phúc nhé, vui vui vui vuiiiiiiii.
+                    </span>
+                    <br> <br>
+                    <span>
+                         Lâu rồi không code gì vui vui cho bạn, hôm nay rảnh tay mình với bạn ôn tập tý nhé!, 
+                    </span>
+                    <br> <br>
+                    <span>
+                        Có vài thứ muốn cho bạn xem lại một chút, coi như là xem lại hành trình đi. Let's go!!!!!!
+                    </span>
+                    <br> <br>
+                    
+                </p>
+        </div>
+        <div class="parent">
+            <button class="btn">Tiếp tục nào</button>
+
+        </div>
+    </div>
+</div>
+        <div id="page2" class="page hidden">
+            <div class="images">
+                <div class="box"><img src="Images/1.jpg" alt="Ảnh 1"></div>
+                <div class="box"><img src="Images/2.jpg" alt="Ảnh 2"></div>
+                <div class="box"><img src="Images/3.jpg" alt="Ảnh 3"></div>
+                <div class="box"><img src="Images/4.jpg" alt="Ảnh 4"></div>
+                <div class="box"><img src="Images/5.jpg" alt="Ảnh 5"></div>
+                <div class="box"><img src="Images/6.jpg" alt="Ảnh 6"></div>
+                <div class="box"><img src="Images/7.jpg" alt="Ảnh 7"></div>
+                <div class="box"><img src="Images/8.jpg" alt="Ảnh 8"></div>
+                <div class="box"><img src="Images/9.jpg" alt="Ảnh 9"></div>
+                <div class="box"><img src="Images/10.jpg" alt="Ảnh 10"></div>
+                <div class="box"><img src="Images/11.jpg" alt="Ảnh 11"></div>
+                <div class="box"><img src="Images/12.jpg" alt="Ảnh 12"></div>
+                <div class="box"><img src="Images/13.jpg" alt="Ảnh 13"></div>
+                <div class="box"><img src="Images/14.jpg" alt="Ảnh 14"></div>
+                <div class="box"><img src="Images/15.jpg" alt="Ảnh 15"></div>
+                <div class="box"><img src="Images/16.jpg" alt="Ảnh 16"></div>
+                <div class="box"><img src="Images/17.jpg" alt="Ảnh 17"></div>
+                <div class="box"><img src="Images/18.jpg" alt="Ảnh 18"></div>
+                <div class="box"><img src="Images/19.jpg" alt="Ảnh 19"></div>
+                <div class="box"><img src="Images/20.jpg" alt="Ảnh 20"></div>
+                <div class="box"><img src="Images/21.jpg" alt="Ảnh 21"></div>
+                <div class="box"><img src="Images/22.jpg" alt="Ảnh 22"></div>
+                <div class="box"><img src="Images/23.jpg" alt="Ảnh 23"></div>
+                <div class="box"><img src="Images/24.jpg" alt="Ảnh 24"></div>
+                <div class="box"><img src="Images/25.jpg" alt="Ảnh 25"></div>
+                <div class="box"><img src="Images/26.jpg" alt="Ảnh 26"></div>
+                <div class="box"><img src="Images/27.jpg" alt="Ảnh 27"></div>
+                <div class="box"><img src="Images/28.jpg" alt="Ảnh 28"></div>
+                <div class="box"><img src="Images/29.jpg" alt="Ảnh 29"></div>
+                <div class="box"><img src="Images/30.jpg" alt="Ảnh 30"></div>
+                
+            </div>
+            <h1 id="abc">Our Memories
+            </h1>
+            <button id="back1">Back lại xem thư</button>
+            <button id="continue2">Muốn xem tiếp</button>
+        </div>
+        <div id="page3" class="page hidden">
+            <div class="chart-container">
+                <h2>Our Love's Chart</h2>
+                <canvas id="myChart"></canvas>
+            </div>
+            <button id="back2">Quay lại ngắm ảnh</button>
+            <button class="continue3">Lời tớ muốn nói</button>
+        </div>
+
+        <div id="page4" class="page hidden">
+            <audio id="finalMusic" loop>
+                <source src="Sound/key.mp3" type="audio/mp3">
+            </audio>
+            <div class="final">
+                <div class="heart3">
+                    <img src="Images/pinkheart.png">
+                </div>
+                <div class="image2">
+                    <img src="Images/Final.png">
+                </div>
+                <div class="finalMessage">
+                    <p id="textDisplay"></p>
+            
+                    <div class="sincere">
+                        <p class="bold-text"></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="project.js"></script>
+    </body>
+</html>
+
+
+

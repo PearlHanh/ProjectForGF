@@ -1,0 +1,524 @@
+.heart {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	transition: transform 2s;
+	z-index: 1;
+	cursor: pointer;
+
+}
+.container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+#instruction{
+    position: absolute;
+	font-size: 1.6rem;
+	color: rgba(255, 0, 0, 0.554);
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+body{
+    margin: 0px;
+}
+.heart > img {
+    transform: scale(3);
+	width: 200px;
+	height: auto;
+
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+    
+}
+.message{
+    padding: 25px;
+    background-color: #FAF3E0;
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-size: clamp(36px, 30vw, 37px);
+    text-align: justify;
+    line-height: 1.5em;
+    width: 80%;
+    max-width: 1000px;
+    height: 78%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+
+    animation-name: openmess;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 5px;
+	overflow: scroll;
+	scrollbar-width: none;
+}
+
+/* animation cho trai tim dap */
+
+@keyframes beat{
+    0%{
+        width: 50px;
+    }
+    25%{
+        width: 55px;
+    }
+    30%{
+        width: 50px;
+    }
+    50%{
+        width: 45px;
+    }
+    60%{
+        width: 50px;
+    }
+    75%{
+        width: 55px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+/* animation cho mo tin nhan */
+@keyframes openmess{
+    0%{
+        height: 0px;
+        padding: 0px 20px;
+    }
+    100%{
+        height: 80%;
+        padding: 20px 20px;
+    }
+}
+.closed{
+    height: 0px;
+    padding: 0px 20px;
+}
+
+@keyframes heartMove{
+    0%{
+        top: 50%;
+    }
+    100%{
+        top: 89%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+.openNor {
+	animation-direction: normal;
+	animation-play-state: running;
+    }
+.closeNor {
+	animation-direction: reverse;
+	animation-play-state: running;
+}
+.openHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+    animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+.closeHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
+
+.noani{
+    animation-name: none;
+}
+
+
+.openedHer{
+    top: 89%;
+	transform: translate(-50%, 0);
+}
+
+
+
+/* photo */
+
+.parent {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top:60%;
+}
+.btn{
+    cursor: pointer;
+    background-color:rgb(255,182,193);
+    border-radius: 30px 30px; 
+    color:rgba(255, 0, 0, 0.554);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-color: rgba(255, 0, 0, 0.554);;
+}
+
+.ripple {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn:active{
+    transform: scale(0.9);
+
+}
+
+
+
+
+/*chuyen trang */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+
+/* trang 2*/
+#page2 {
+    background-image: url('Images/page2.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FAF3E0;
+    overflow: hidden;
+}
+
+.images{
+    display: grid;
+    position: absolute;
+    top: 30%;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; /* Khoảng cách giữa các box */
+    width: 90vw; /* Chiếm 90% chiều rộng màn hình */
+    height: 60vh; /* Chiếm 90% chiều cao màn hình */
+}
+
+.box {
+    border: 3px solid rgb(255,182,193);
+    width: 100%;
+    aspect-ratio: 12 / 9; /* Tỷ lệ 12:9 */
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#back1{
+    position: absolute;
+    top : 90%;
+    left:40%;
+    cursor: pointer;
+    background-color:rgb(255,182,193);
+    border-radius: 30px 30px; 
+    color:rgba(255, 0, 0, 0.554);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-color: rgba(255, 0, 0, 0.554);
+}
+
+#continue2{
+    position: absolute;
+    top : 90%;
+    left:55%;
+    cursor: pointer;
+    background-color:rgb(255,182,193);
+    border-radius: 30px 30px; 
+    color:rgba(255, 0, 0, 0.554);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-color: rgba(255, 0, 0, 0.554);;
+}
+
+
+
+
+.heart2 {
+    position: absolute;
+    bottom: -50px;  /* Start below the screen */
+    font-size: 30px;
+    color: red;
+    opacity: 0;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-90vh); /* Move up */
+        opacity: 0;
+    }
+}
+
+
+#page3{
+    font-family: Arial, sans-serif;
+    background-image: url('Images/page2.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Phần container chứa biểu đồ */
+.chart-container {
+    background-color: #fff; /* Nền trắng cho container */
+    border-radius: 10px; /* Bo góc cho container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho container */
+    padding: 30px;
+    width: 80vh;
+    max-width: 80vh; /* Giới hạn chiều rộng tối đa */
+}
+
+/* Tiêu đề của biểu đồ */
+h2 {
+    text-align: center;
+    color: rgba(255, 0, 0, 0.554);
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-family: "Quicksand", serif;
+}
+
+/* Canvas biểu đồ */
+#myChart {
+    width: 100%;
+    height: 80vh;
+}
+
+/* Tùy chỉnh tooltip của biểu đồ */
+.chartjs-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+h3{
+    text-align: center;
+    color: rgba(255, 0, 0, 0.554);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-family: "Quicksand", serif;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+}
+
+#back2{
+    position: absolute;
+    top : 85%;
+    left: 30%;
+    cursor: pointer;
+    background-color:rgb(255,182,193);
+    border-radius: 30px 30px; 
+    color:rgba(255, 0, 0, 0.554);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-color: rgba(255, 0, 0, 0.554);
+}
+.continue3{
+    position: absolute;
+    top : 85%;
+    left:60%;
+    cursor: pointer;
+    background-color:rgb(255,182,193);
+    border-radius: 30px 30px; 
+    color:rgba(255, 0, 0, 0.554);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-color: rgba(255, 0, 0, 0.554);
+}
+
+
+.heart3 {
+	position: absolute;
+	left: 35%;
+	top: 10%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	transition: transform 2s;
+	z-index: 1;
+	cursor: pointer;
+
+}
+
+.heart3 > img {
+	width: 50px;
+	height: auto;
+    transform: scale(3.5);
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+    
+}
+
+#page4{
+    font-family: Arial, sans-serif;
+    background-image: url('Images/page2.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.finalMessage {
+	padding: 25px;
+	background-color: #eee;
+	font-family: "Quicksand", serif;
+	font-optical-sizing: auto;
+	font-size: clamp(36px, 30vw, 37px);
+	text-align: justify;
+	line-height: 1.5em;
+	width: 100%;
+	max-width: 1600px;
+	height: 78%;
+    max-height: 1260px;
+	position: absolute;
+	left: 20%;
+	top: 52%;
+	transform: translate(-25%, -50%);
+	z-index: 0;
+
+	animation-name: openmess;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 5px;
+	overflow: scroll;
+	scrollbar-width: none;
+}
+
+
+
+.image2{
+    transform: scale(0.5);
+    position: absolute;
+    top: -19%;
+    left: 70%;
+    animation-name: openimage;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+    transform-origin: center;
+}
+
+@keyframes openimage{
+    0%{
+        height: 0px;
+        padding: 0px 20px;
+    }
+    100%{
+        height:80%;
+        padding: 20px 20px;
+    }
+}
+
+span{
+    font-size: 1cm;
+}
+
+.finalMessage .sincere{
+	text-align: left;
+	font-family: "Cinzel, serif";
+	font-size: 50px;
+	line-height: 1.2em;
+}
+
+.letter {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#abc{
+    text-align: center;
+    color: rgba(255, 0, 0, 0.554);
+    font-size: 8em;
+    font-family: "Cinzel, serif";
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
